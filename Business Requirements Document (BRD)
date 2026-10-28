@@ -5,113 +5,142 @@
 
 - **Project Name:** AI-Assisted Clinical Documentation Workflow Improvement
 - **Document Type:** Business Requirements Document
-- **Version:** 1.0
+- **Version:** 1.1
 - **Status:** Draft — Portfolio Project
 - **Domain:** Healthcare IT
 
 ## 2. Business Background
 
-Clinical documentation involves converting consultation information into structured clinical notes. Manual preparation may require repetitive typing, corrections, and additional time to complete documentation.
+Clinical documentation involves converting patient consultation information into structured clinical notes. In the current workflow, the doctor conducts the consultation, the medical scribe prepares the note and corrects documentation mistakes, and the doctor reviews the note before finalization.
 
-This project proposes an AI-assisted workflow that generates a draft clinical note for clinician review and approval.
+This project proposes an AI-assisted workflow in which AI generates a draft clinical note. The scribe reviews and corrects the draft, and the doctor checks its clinical accuracy and approves it before finalization.
 
 ## 3. Problem Statement
 
-The existing manual documentation process may create documentation delays, repetitive work, and opportunities for incomplete or inconsistent information. The project aims to analyze these challenges and define a proposed workflow that supports documentation efficiency while retaining clinician oversight.
+Manual clinical note preparation can involve repetitive typing, documentation corrections, and additional time spent preparing notes for review.
 
-The current-state assumptions must be validated with relevant stakeholders before real-world implementation.
+The project aims to explore how AI-assisted draft generation could reduce manual documentation effort while maintaining the scribe's responsibility for documentation corrections and the doctor's responsibility for clinical review and approval.
+
+The extent of the current challenges must be validated with relevant stakeholders before real-world implementation.
 
 ## 4. Business Objectives
 
-1. Reduce manual effort involved in preparing clinical notes.
-2. Improve the completeness and consistency of documentation.
-3. Reduce avoidable corrections and repeated work.
-4. Ensure clinicians review and approve notes before finalization.
-5. Protect patient information through appropriate security and access controls.
+1. Reduce the manual effort involved in preparing clinical notes.
+2. Improve the completeness and consistency of clinical documentation.
+3. Reduce avoidable documentation corrections and repeated work.
+4. Support the scribe in reviewing and correcting AI-generated drafts.
+5. Ensure the doctor reviews and approves the note before finalization.
+6. Protect patient information through appropriate privacy and security controls.
+7. Establish measurable indicators to evaluate workflow efficiency and documentation quality.
 
 ## 5. Project Scope
 
 ### In Scope
 
-- Analyze the current documentation workflow.
-- Gather and document business requirements.
-- Identify gaps in the existing process.
-- Propose an AI-assisted documentation workflow.
-- Define functional requirements and business rules.
-- Create user stories and acceptance criteria.
+- Analyze the existing manual documentation workflow.
+- Gather and document stakeholder requirements.
+- Identify process gaps and improvement opportunities.
+- Propose an AI-assisted clinical note generation workflow.
+- Define the scribe's review and correction responsibilities.
+- Define the doctor's review and approval responsibilities.
+- Prepare BRD and FRD documents.
+- Create As-Is and To-Be workflow diagrams.
+- Prepare gap analysis, user stories, and acceptance criteria.
 - Define UAT scenarios and performance indicators.
 
 ### Out of Scope
 
 - Developing a production AI application.
 - Connecting to a live EHR system.
-- Using real patient data.
-- Claiming actual efficiency improvements without testing.
-- Replacing clinician review or approval.
+- Using real patient information in the portfolio.
+- Claiming actual performance improvements without testing.
+- Replacing the medical scribe or doctor's required responsibilities.
+- Allowing AI-generated notes to be finalized without required review and approval.
 
-## 6. Stakeholders
+## 6. Stakeholder Analysis
 
-| Stakeholder               | Responsibility                                           |
-| ------------------------- | -------------------------------------------------------- |
-| Doctor / Clinician        | Reviews, edits, and approves clinical notes              |
-| Medical Scribe            | Supports documentation and identifies workflow issues    |
-| Practice Manager          | Reviews operational efficiency                           |
-| IT / EHR Team             | Assesses technical feasibility and integration           |
-| Compliance / Privacy Team | Reviews privacy and security requirements                |
-| Business Analyst          | Gathers requirements and documents the proposed solution |
-| AI Development Team       | Evaluates and develops the proposed functionality        |
+| Stakeholder               | Responsibility                                                           |
+| ------------------------- | ------------------------------------------------------------------------ |
+| Doctor / Clinician        | Reviews the clinical note, checks clinical accuracy, and approves it     |
+| Medical Scribe            | Prepares clinical documentation and corrects documentation mistakes      |
+| Practice Manager          | Evaluates workflow efficiency and operational impact                     |
+| IT / EHR Team             | Evaluates technical feasibility and EHR integration                      |
+| Compliance / Privacy Team | Reviews patient privacy, access, and security requirements               |
+| Business Analyst          | Gathers requirements, analyzes gaps, and documents the proposed solution |
+| AI Development Team       | Evaluates and develops the proposed AI functionality                     |
 
 ## 7. Business Requirements
 
-| ID    | Requirement                                                                                   | Priority |
-| ----- | --------------------------------------------------------------------------------------------- | -------- |
-| BR-01 | The solution should support faster clinical note preparation.                                 | High     |
-| BR-02 | The solution should generate structured draft notes from authorized consultation information. | High     |
-| BR-03 | A clinician must review and approve the note before finalization.                             | Critical |
-| BR-04 | The clinician must be able to edit and correct generated content.                             | High     |
-| BR-05 | Patient information must be protected through appropriate security controls.                  | Critical |
-| BR-06 | Approved notes should be saved to the correct EHR record through an authorized workflow.      | High     |
-| BR-07 | The solution should support measurement of documentation quality and efficiency.              | Medium   |
+| ID    | Business Requirement                                                                                    | Priority |
+| ----- | ------------------------------------------------------------------------------------------------------- | -------- |
+| BR-01 | The solution should reduce manual effort in clinical note preparation.                                  | High     |
+| BR-02 | The solution should generate a structured draft clinical note from authorized consultation information. | High     |
+| BR-03 | The scribe should be able to review and correct documentation mistakes in the generated draft.          | High     |
+| BR-04 | The doctor must review the corrected note and check its clinical accuracy before approval.              | Critical |
+| BR-05 | The note must not be finalized without the required doctor approval.                                    | Critical |
+| BR-06 | The approved note should be saved to the correct EHR record through an authorized workflow.             | High     |
+| BR-07 | Patient information must be protected through appropriate privacy and security controls.                | Critical |
+| BR-08 | The solution should support measurement of documentation efficiency and quality.                        | Medium   |
 
-## 8. Business Success Metrics
+## 8. Proposed Business Process
 
-The following indicators can be used to evaluate the solution after implementation and testing:
+1. The doctor conducts the patient consultation.
+2. Authorized consultation information is provided to the AI-assisted system.
+3. AI generates a draft clinical note.
+4. The scribe reviews the draft and corrects documentation mistakes.
+5. The doctor reviews the corrected note and checks clinical accuracy.
+6. If further corrections are required, the note is returned through the agreed correction workflow.
+7. The doctor approves the note.
+8. The approved note is finalized or saved to the correct EHR record through an authorized process.
 
-- Average clinical note completion time.
+## 9. Business Success Metrics
+
+The following indicators can be used to evaluate the proposed solution:
+
+- Average time required to prepare a clinical note.
+- Average time spent by the scribe correcting a draft.
 - Percentage of notes requiring significant corrections.
-- Percentage of required note sections completed.
-- Time between draft generation and clinician approval.
-- Number of incomplete or pending notes.
+- Percentage of required clinical note sections completed.
+- Time from draft generation to doctor approval.
+- Number of incomplete or pending clinical notes.
 
-Baseline measurements and improvement targets must be established with stakeholders. No performance results are claimed in this conceptual project.
+Baseline values and target improvements must be agreed upon with stakeholders. This conceptual project does not claim measured results.
 
-## 9. Assumptions and Dependencies
+## 10. Assumptions and Dependencies
 
-- The organization authorizes the proposed AI documentation workflow.
-- Consultation information can be provided through an approved method.
-- Clinicians can review, edit, and approve generated notes.
+- The organization authorizes the proposed AI-assisted documentation process.
+- Consultation information can be provided through an approved input method.
+- AI can generate a draft for human review.
+- The scribe can review and correct the draft.
+- The doctor can review and approve the corrected note.
 - EHR integration or an authorized transfer method is technically feasible.
 - Applicable privacy, security, consent, and record-retention requirements are addressed.
 
-## 10. Risks and Constraints
+## 11. Risks and Constraints
 
-- AI-generated content may be inaccurate or incomplete.
-- Incorrect patient or encounter selection could create documentation risks.
-- EHR integration may require additional technical work.
-- Privacy and security requirements may restrict available input methods.
-- Users may require training before adopting the proposed workflow.
+| Risk                                          | Business Impact                                | Proposed Mitigation                                             |
+| --------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
+| AI generates inaccurate information           | Incorrect content may enter the draft          | Require scribe review and doctor approval                       |
+| Required information is missing               | The note may be incomplete                     | Identify missing information for review                         |
+| Incorrect patient or encounter is selected    | Documentation may be saved to the wrong record | Verify patient and encounter before saving                      |
+| AI generation or EHR saving fails             | Documentation may be delayed                   | Display failure status and provide an approved recovery process |
+| Unauthorized access to patient information    | Privacy and security risk                      | Apply approved access controls and auditing                     |
+| Users do not understand the proposed workflow | Delays or inconsistent use                     | Provide workflow guidance and appropriate training              |
 
-## 11. Business Acceptance Criteria
+## 12. Business Acceptance Criteria
 
 The proposed solution will be considered ready for business acceptance when:
 
-1. Agreed business requirements have been reviewed by stakeholders.
-2. The draft can be reviewed and corrected by an authorized clinician.
-3. Required clinician approval is enforced before finalization.
-4. The workflow handles saving failures without falsely reporting success.
-5. Security, privacy, and access-control requirements have been reviewed.
-6. Agreed UAT scenarios have been executed and their results documented.
+1. Business requirements have been reviewed with relevant stakeholders.
+2. The system generates a structured draft from authorized consultation information.
+3. The scribe can review and correct the draft.
+4. The doctor can review the corrected note and approve it or request further corrections.
+5. Required doctor approval is enforced before finalization.
+6. The correct patient and encounter are verified before saving.
+7. Saving failures are handled without falsely reporting success.
+8. Privacy, security, and access-control requirements have been reviewed.
+9. Agreed UAT scenarios have been executed and results documented.
 
-## 12. Approval
+## 13. Approval and Document Status
 
-This document is a draft created for an educational Business Analyst portfolio project. Stakeholder review and formal approval would be required before implementation in a real healthcare environment.
+This document is a draft for an educational Business Analyst portfolio project. The proposed workflow and requirements have not been validated through formal stakeholder interviews or production testing. Stakeholder review and approval would be required before implementation in a real healthcare environment.
