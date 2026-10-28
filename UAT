@@ -1,0 +1,81 @@
+# User Acceptance Testing (UAT) Test Cases
+
+## Project: AI-Assisted Clinical Documentation Workflow Improvement
+
+### UAT-01: Generate Draft Clinical Note
+**Requirement:** BR-01
+
+**Test Scenario:** Verify that the system generates a draft from authorized consultation information.
+
+**Steps:**
+1. Provide authorized consultation information.
+2. Submit the information for draft generation.
+3. Check the generated output.
+
+**Expected Result:** A draft clinical note is generated and made available for scribe review.
+
+### UAT-02: Review and Correct Draft
+**Requirement:** BR-02
+
+**Test Scenario:** Verify that the scribe can review and correct the generated draft.
+
+**Steps:**
+1. Open the generated draft.
+2. Identify an intentionally introduced documentation error in test data.
+3. Correct the error.
+4. Save the updated draft.
+
+**Expected Result:** The corrected draft is saved and available for doctor review.
+
+### UAT-03: Doctor Approval
+**Requirement:** BR-03
+
+**Test Scenario:** Verify that doctor approval is required before finalization.
+
+**Steps:**
+1. Open the corrected draft as a doctor.
+2. Review the note.
+3. Approve the note if accurate and complete.
+
+**Expected Result:** The note proceeds to finalization only after doctor approval.
+
+### UAT-04: Save to Correct EHR Record
+**Requirement:** BR-04
+
+**Test Scenario:** Verify that an approved note is associated with the intended patient record.
+
+**Steps:**
+1. Use a designated test patient record.
+2. Approve the test note.
+3. Save or finalize the note.
+4. Verify the patient record association.
+
+**Expected Result:** The note is saved to the correct test patient record.
+
+### UAT-05: Draft Generation Failure
+**Requirement:** BR-05
+
+**Test Scenario:** Verify how the system responds when draft generation fails.
+
+**Steps:**
+1. Simulate a draft-generation failure in the test environment.
+2. Observe the system response.
+
+**Expected Result:** An appropriate error message is displayed, and the note is not incorrectly marked as generated.
+
+### UAT-06: EHR Saving Failure
+**Requirement:** BR-06
+
+**Test Scenario:** Verify how the system responds when saving a note fails.
+
+**Steps:**
+1. Simulate a saving failure in the test environment.
+2. Observe the system response.
+
+**Expected Result:** An error message is displayed, and the note is not incorrectly marked as finalized.
+
+## Testing Status
+
+All test cases are planned. Actual execution and pass/fail results have not yet been recorded.
+
+**Important:** Use fictional test data only. Do not use real patient information.
