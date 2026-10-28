@@ -50,5 +50,9 @@ Business Analysis, BRD, FRD, Requirement Gathering, Requirement Analysis, Gap An
 ## Project Status
 Conceptual portfolio project — requirements and workflow documentation are being developed.
 
+## Jira Project
+
+(https://nalajamnagarathna.atlassian.net/jira/software/projects/ATID/boards/68/backlog)
+
 ## Disclaimer
 This project is for educational and portfolio purposes. It does not represent an implemented clinical system. No real patient information or confidential employer information is included.
