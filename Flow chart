@@ -1,0 +1,36 @@
+# Clinical Documentation Workflow Flowcharts
+
+## 1. As-Is Workflow (Current Process)
+
+```mermaid
+flowchart TD
+    A([Start]) --> B["Doctor conducts patient consultation"]
+    B --> C["Scribe receives consultation information"]
+    C --> D["Scribe prepares clinical note"]
+    D --> E["Scribe corrects documentation mistakes"]
+    E --> F["Doctor reviews the clinical note"]
+    F --> G{"Is the note accurate and complete?"}
+    G -- No --> H["Note returned for correction"]
+    H --> E
+    G -- Yes --> I["Doctor approves the note"]
+    I --> J["Note is finalized in the EHR"]
+    J --> K([End])
+```
+
+## 2. To-Be Workflow (Proposed Process)
+
+```mermaid
+flowchart TD
+    A([Start]) --> B["Doctor conducts patient consultation"]
+    B --> C["Authorized consultation information is supplied to AI"]
+    C --> D["AI generates draft clinical note"]
+    D --> E["Scribe reviews the AI-generated draft"]
+    E --> F["Scribe corrects documentation errors"]
+    F --> G["Doctor checks clinical accuracy"]
+    G --> H{"Are corrections required?"}
+    H -- Yes --> I["Return note for correction"]
+    I --> E
+    H -- No --> J["Doctor approves the note"]
+    J --> K["Note is saved or finalized in the correct EHR record"]
+    K --> L([End])
+```
