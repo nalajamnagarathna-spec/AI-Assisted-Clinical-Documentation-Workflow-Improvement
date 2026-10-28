@@ -1,0 +1,86 @@
+# Gap Analysis
+
+## 1. Document Information
+
+- **Project Name:** AI-Assisted Clinical Documentation Workflow Improvement
+- **Document Type:** Gap Analysis
+- **Version:** 1.0
+- **Status:** Draft — Portfolio Project
+
+## 2. Purpose
+
+The purpose of this gap analysis is to compare the current manual clinical documentation workflow (As-Is) with the proposed AI-assisted workflow (To-Be), identify missing capabilities, and recommend actions to address the gaps.
+
+## 3. Current Workflow (As-Is)
+
+1. The doctor conducts the consultation.
+2. The scribe prepares the clinical note.
+3. The scribe corrects documentation mistakes.
+4. The doctor reviews and checks the note.
+5. The note is finalized in the EHR according to the existing workflow.
+
+## 4. Proposed Workflow (To-Be)
+
+1. The doctor conducts the consultation.
+2. Authorized consultation information is provided to the AI-assisted system.
+3. AI generates a draft clinical note.
+4. The scribe reviews the draft and corrects documentation mistakes.
+5. The doctor reviews the corrected note and checks clinical accuracy.
+6. The doctor approves the note or requests further corrections.
+7. The approved note is finalized or saved to the correct EHR record through an authorized workflow.
+
+## 5. Gap Analysis Table
+
+| ID | Area | As-Is Process | To-Be Process | Identified Gap |
+|---|---|---|---|---|
+| GAP-01 | Note preparation | Scribe prepares the note manually | AI generates a draft for the scribe | AI draft-generation capability is needed |
+| GAP-02 | Information input | Information follows the existing documentation process | Authorized information is provided to the AI system | An approved input method must be defined |
+| GAP-03 | Documentation structure | Note preparation follows the existing workflow | AI draft follows configured note sections | Standard note templates and section rules are needed |
+| GAP-04 | Scribe corrections | Scribe corrects documentation mistakes | Scribe reviews and corrects the AI-generated draft | A review and editing interface is needed |
+| GAP-05 | Doctor review | Doctor checks the prepared note | Doctor checks the corrected AI-assisted note | A clear review and approval workflow is needed |
+| GAP-06 | Note status | Status handling follows the existing process | Draft, pending review, approved, and failure states are visible | Status tracking must be defined |
+| GAP-07 | EHR saving | Note is finalized through the existing EHR workflow | Approved note is saved through an authorized workflow | EHR integration or an approved transfer method must be assessed |
+| GAP-08 | Error handling | Handling depends on the current process | AI and saving failures are clearly communicated | Error handling and recovery procedures are needed |
+| GAP-09 | Performance measurement | Baseline metrics may not be consistently available | Documentation performance is measured using agreed KPIs | Metric definitions and reporting are needed |
+| GAP-10 | Privacy and security | Existing controls apply | AI-assisted processing must meet approved controls | Privacy, security, access, and audit requirements must be assessed |
+
+## 6. Recommended Actions
+
+| Gap ID | Recommended Action | Suggested Owner |
+|---|---|---|
+| GAP-01 | Evaluate and configure AI draft generation | AI / IT Team |
+| GAP-02 | Define the approved consultation information input method | Clinical and Compliance Teams |
+| GAP-03 | Define note templates and required sections | Clinical Stakeholders |
+| GAP-04 | Define scribe review and correction functionality | Product / Development Team |
+| GAP-05 | Define doctor review, approval, and return-for-correction steps | Clinical Stakeholders |
+| GAP-06 | Define note statuses and status transitions | Business Analyst / Development Team |
+| GAP-07 | Assess EHR integration and saving requirements | EHR / IT Team |
+| GAP-08 | Define error messages and recovery procedures | Product / IT Team |
+| GAP-09 | Establish baseline metrics and reporting rules | Business Analyst / Operations |
+| GAP-10 | Complete privacy and security assessment | Compliance / Security Team |
+
+## 7. Expected Benefits
+
+The proposed workflow may:
+
+- Reduce manual effort in preparing the initial note.
+- Allow the scribe to focus on reviewing and correcting generated content.
+- Preserve the doctor's role in checking clinical accuracy and approving the note.
+- Improve visibility into the documentation process.
+- Support measurement of workflow efficiency and documentation quality.
+
+These are expected benefits and have not been measured in a live environment.
+
+## 8. Risks and Considerations
+
+- AI-generated content may be inaccurate or incomplete.
+- The scribe and doctor may need training on the new workflow.
+- EHR integration may require technical changes and approvals.
+- Patient privacy and security requirements must be satisfied.
+- The proposed workflow must be validated with stakeholders before implementation.
+
+## 9. Conclusion
+
+The main proposed change is the introduction of AI-assisted draft generation before the scribe's correction process. The scribe remains responsible for correcting documentation mistakes, and the doctor remains responsible for reviewing and approving the clinical note.
+
+The identified gaps and recommended actions provide a starting point for requirements validation and future solution design.
