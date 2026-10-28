@@ -1,0 +1,18 @@
+# Requirements Traceability Matrix (RTM)
+
+## Project: AI-Assisted Clinical Documentation Workflow Improvement
+
+| Requirement ID | Requirement | Related Jira Story | UAT Test Case |
+|---|---|---|---|
+| BR-01 | Generate an AI-assisted draft clinical note | Generate a Draft Clinical Note Using AI | UAT-01 |
+| BR-02 | Allow the scribe to review and correct the draft | Review and Correct the AI-Generated Draft | UAT-02 |
+| BR-03 | Require doctor verification and approval | Verify Clinical Accuracy and Approve the Note | UAT-03 |
+| BR-04 | Save the approved note in the correct EHR record | Save the Approved Note in the Correct EHR Record | UAT-04 |
+| BR-05 | Display an error when draft generation fails | Generate a Draft Clinical Note Using AI | UAT-05 |
+| BR-06 | Display an error when saving the note fails | Save the Approved Note in the Correct EHR Record | UAT-06 |
+
+## Notes
+
+- This RTM maps proposed requirements to Jira Stories and planned UAT test cases.
+- The test cases still need to be documented and reviewed.
+- This is a conceptual portfolio project, not a validated production system.
