@@ -1,0 +1,119 @@
+
+# Functional Requirements Document (FRD)
+
+## 1. Document Information
+
+- **Project Name:** AI-Assisted Clinical Documentation Workflow Improvement
+- **Document Type:** Functional Requirements Document
+- **Version:** 1.1
+- **Status:** Draft — Portfolio Project
+- **Domain:** Healthcare IT
+
+## 2. Purpose
+
+This document defines the functional requirements for a proposed AI-assisted clinical documentation workflow. The solution aims to reduce manual documentation effort while maintaining the scribe's responsibility for correcting documentation mistakes and the doctor's responsibility for reviewing clinical accuracy.
+
+## 3. Current Workflow (As-Is)
+
+1. The doctor conducts the patient consultation.
+2. The scribe prepares the clinical note based on the consultation information.
+3. The scribe corrects documentation mistakes.
+4. The doctor reviews and checks the note.
+5. The note is finalized in the EHR according to the existing workflow.
+
+## 4. Proposed Workflow (To-Be)
+
+1. The doctor conducts the patient consultation.
+2. Authorized consultation information is provided to the AI-assisted system.
+3. The AI generates a draft clinical note.
+4. The scribe reviews the draft and corrects documentation mistakes.
+5. The doctor reviews the corrected note and checks its clinical accuracy.
+6. The doctor approves the note.
+7. The approved note is finalized or saved to the correct EHR record through an authorized workflow.
+8. The system displays the final status of the note.
+
+## 5. Functional Requirements
+
+| ID    | Functional Requirement                                                                                                           | Priority |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| FR-01 | The system shall allow an authorized user to initiate a documentation session.                                                   | High     |
+| FR-02 | The system shall receive consultation information through an approved input method.                                              | High     |
+| FR-03 | The system shall generate a draft clinical note from authorized consultation information.                                        | High     |
+| FR-04 | The system shall organize the draft into configured clinical note sections.                                                      | High     |
+| FR-05 | The system shall allow the scribe to review the AI-generated draft.                                                              | High     |
+| FR-06 | The system shall allow the scribe to correct documentation mistakes and edit the draft.                                          | High     |
+| FR-07 | The system shall preserve the scribe's corrections for the doctor's review.                                                      | High     |
+| FR-08 | The system shall allow the doctor to review the corrected note and check clinical accuracy.                                      | Critical |
+| FR-09 | The system shall require the doctor's approval before finalization.                                                              | Critical |
+| FR-10 | The system shall save or transfer the approved note to the correct EHR record through an authorized workflow.                    | High     |
+| FR-11 | The system shall display the note status, such as Draft, Pending Scribe Review, Pending Doctor Review, Approved, or Save Failed. | High     |
+| FR-12 | The system shall record relevant edits, approvals, and other required audit information.                                         | High     |
+| FR-13 | The system shall restrict access according to user permissions.                                                                  | Critical |
+| FR-14 | The system shall support reporting of agreed documentation performance metrics.                                                  | Medium   |
+
+## 6. Business Rules
+
+- BRL-01: AI-generated clinical notes shall remain drafts until reviewed and approved through the required workflow.
+- BRL-02: The scribe shall correct documentation mistakes in the AI-generated draft.
+- BRL-03: The doctor shall review the corrected note and check its clinical accuracy.
+- BRL-04: The doctor shall approve the note before finalization.
+- BRL-05: The system shall not silently finalize or sign a note on behalf of the doctor.
+- BRL-06: The correct patient and encounter shall be verified before the note is saved.
+- BRL-07: The system shall not report successful saving unless success is confirmed.
+- BRL-08: Only authorized users shall access protected patient information.
+
+## 7. Non-Functional Requirements
+
+| ID     | Category     | Requirement                                                                 |
+| ------ | ------------ | --------------------------------------------------------------------------- |
+| NFR-01 | Security     | Protect clinical information through approved security controls.            |
+| NFR-02 | Privacy      | Follow applicable privacy requirements and organizational policies.         |
+| NFR-03 | Usability    | Provide a clear interface for scribe corrections and doctor review.         |
+| NFR-04 | Reliability  | Handle AI generation and EHR saving failures safely.                        |
+| NFR-05 | Performance  | Meet response-time targets agreed upon with stakeholders.                   |
+| NFR-06 | Auditability | Maintain appropriate records of corrections, approvals, and saving actions. |
+
+## 8. Error Handling
+
+- If required consultation information is missing, the system shall identify the missing information or request clarification.
+- If AI draft generation fails, the system shall display an error and provide an approved recovery option.
+- If the scribe identifies incorrect or incomplete content, the scribe shall be able to correct the draft before sending it for doctor review.
+- If the doctor identifies a problem, the note shall be returned for correction according to the agreed workflow.
+- If EHR saving fails, the system shall display the failure status and avoid falsely reporting success.
+- If the patient or encounter cannot be verified, the system shall prevent saving until the issue is resolved.
+
+## 9. Acceptance Criteria
+
+1. The system generates a structured draft from valid, authorized consultation information.
+2. The scribe can review and correct the generated draft.
+3. The corrected draft is available for doctor review.
+4. The doctor can review the note and approve it or request corrections.
+5. The note cannot be finalized without the required doctor approval.
+6. The system displays the correct status at each workflow stage.
+7. The system handles saving failures without falsely reporting success.
+8. Only authorized users can access restricted clinical information.
+
+## 10. Traceability to Business Requirements
+
+| Functional Requirement     | Related Business Requirement |
+| -------------------------- | ---------------------------- |
+| FR-01, FR-02, FR-03        | BR-01, BR-02                 |
+| FR-04, FR-05, FR-06, FR-07 | BR-02, BR-04                 |
+| FR-08, FR-09               | BR-03                        |
+| FR-10, FR-11               | BR-06                        |
+| FR-12, FR-13               | BR-05                        |
+| FR-14                      | BR-07                        |
+
+## 11. Dependencies
+
+- Approved consultation information input method.
+- AI draft-generation capability.
+- Configured clinical note templates.
+- Scribe review and correction workflow.
+- Doctor review and approval workflow.
+- Authorized EHR integration or transfer process.
+- Approved privacy, security, and audit controls.
+
+## 12. Document Status
+
+This FRD describes a proposed solution for an educational Business Analyst portfolio project. Requirements and workflow details must be validated with stakeholders before real-world implementation.
